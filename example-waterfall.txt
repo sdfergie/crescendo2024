@@ -1,0 +1,66 @@
+Sample code and concepts
+
+
+This is an example of a way to have multiple code editions available an under development simultaniously. This is to implement a rapid development method called the waterfall method.
+
+
+public class Main {
+  public static void main(String[] args) {
+    // Define a constant to switch rapidly between code releases
+    // Constant to set running code: ("baseline","competition","experimental") just uncomment the release that you want active
+//    final String runCode = "baseline";
+//    final String runCode = "competition";
+//    final String runCode = "experimental";
+
+
+    if (runCode == "baseline" ) {
+
+// ----------------------------------------------------------------------------------------------------------------
+// Start of baseline code
+// ----------------------------------------------------------------------------------------------------------------
+//      System.out.println ("baseline runCode current value: " + runCode);
+// This is where you would copy and paste your baseline code, baseline is the first working code
+
+// ----------------------------------------------------------------------------------------------------------------
+// End of baseline code
+// ----------------------------------------------------------------------------------------------------------------
+
+    } else if (runCode == "competition"){
+
+// ----------------------------------------------------------------------------------------------------------------
+// Start of competition code
+// ----------------------------------------------------------------------------------------------------------------
+//      System.out.println ("competition runCode current value: " + runCode);
+// This is where you would copy and paste your baseline code, baseline is the first working code
+
+// ----------------------------------------------------------------------------------------------------------------
+// End of competition code
+// ----------------------------------------------------------------------------------------------------------------
+
+    } else if (runCode == "experimental"){
+
+// ----------------------------------------------------------------------------------------------------------------
+// Start of experimental code
+// ----------------------------------------------------------------------------------------------------------------
+//      System.out.println ("experimental runCode current value: " + runCode);
+// This is where you would copy and paste your baseline code, baseline is the first working code
+
+// ----------------------------------------------------------------------------------------------------------------
+// End of experimental code
+// ----------------------------------------------------------------------------------------------------------------
+
+    } else {
+
+// ----------------------------------------------------------------------------------------------------------------
+// Start of disabled/invalid code
+// ----------------------------------------------------------------------------------------------------------------
+//      System.out.println ("Invalid value of constant runCode current value: " + runCode);
+// This is where you would copy and paste your baseline code, baseline is the first working code
+
+// ----------------------------------------------------------------------------------------------------------------
+// End of disabled/invalid code
+// ----------------------------------------------------------------------------------------------------------------
+
+    }
+  }
+}
