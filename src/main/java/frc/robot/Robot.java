@@ -35,6 +35,11 @@ public class Robot extends TimedRobot {
   String runCode = "experimental";
 
 
+  // Smooth driving 0 = off 1 = on
+//  int smoothDriving = 0;
+  int smoothDriving = 1;
+
+
   // Constants to set timing for the shooting operation, load will position note at the feed wheel, feed will move the note to the
   // shooting wheel that will already be up to speed, reset will zero out the shoot timer and return to normal operation
   // the other operations will only happen until the free movement time is reached
@@ -180,13 +185,25 @@ public class Robot extends TimedRobot {
      // Start of experimental code
      // ----------------------------------------------------------------------------------------------------------------
 
-      // turning on the shooter wheel then shooter feed and shooter load in correct order at the correct time then turning it off
-
-
+      if (m_driver.getRawButtonReleased(6)){
+        if (smoothDriving == 0){
+          smoothDriving = 1;
+        } else {
+          smoothDriving = 0;
+        }
+      }
       // Make driver controller operate tank drive
-      m_robotDrive.tankDrive(-m_driver.getRawAxis(1),-m_driver.getRawAxis(5));
+      if (smoothDriving == 1) {
+        m_robotDrive.tankDrive(-Math.pow(m_driver.getRawAxis(1),3),-Math.pow(m_driver.getRawAxis(5),3));
+      } else {
+        m_robotDrive.tankDrive(-m_driver.getRawAxis(1),-m_driver.getRawAxis(5));
+      }
+      
 
     // Set button 1 to extend on both climbers at the right multiplier
+
+      // turning on the shooter wheel then shooter feed and shooter load in correct order at the correct time then turning it off
+
     
       // Start shooting timer
       if ((m_operator.getRawAxis(3) > 0) && (shootTime == 0L)) {
@@ -227,8 +244,8 @@ public class Robot extends TimedRobot {
         m_shooter_feed.set(0.0);
 
         // Activate Left bumper control of the loader
-        //var loader_speed = m_operator.getRawButton(5) ? 1.0 : 0.0;
-        //m_shooter_load.set(loader_speed);
+        var loader_speed = m_operator.getRawButton(5) ? 1.0 : 0.0;
+        m_shooter_load.set(loader_speed);
 
       }
 
@@ -247,19 +264,16 @@ public class Robot extends TimedRobot {
       }
 
     // this is to move the intake up and down to load it into the launcher
-    if ((m_operator.getPOV() != -1) && (m_operator.getPOV() != 270) &&(m_operator.getPOV() != 90)){
-      if ((m_operator.getPOV(0) > 220) || (m_operator.getPOV(0) < 290)) {
+      if ((m_operator.getPOV(0) == 225) || (m_operator.getPOV(0) == 180) || (m_operator.getPOV(0) == 135)) {
         m_intake_lift.set(1.0);
-      }
-      if ((m_operator.getPOV(0) > 220) || (m_operator.getPOV(0) < 290)) {
+      } else if ((m_operator.getPOV(0) == 315) || (m_operator.getPOV(0) == 0) || (m_operator.getPOV(0) == 45)) {
         m_intake_lift.set(-1.0);
+      } else {
+        m_intake_lift.set(0);
       } 
 
-    } else {
-      m_intake_lift.set(0.0);
-    }
 
-      // this is to pick it up to the ground
+      // this is to pick it up from the ground
       if (m_operator.getRawButton(3)) {
         m_floor_intake.set(1.0);
       } else {
@@ -267,7 +281,7 @@ public class Robot extends TimedRobot {
       }
       if (m_operator.getRawButton(4)) {
         m_floor_intake.set(-1.0);
-      } else {
+      } else if (!m_operator.getRawButton(3)){
         m_floor_intake.set(0.0);
       }
 
