@@ -1,0 +1,21 @@
+Con1: (0)
+"h" (Right Stick) (Up) on Axis 5 Right wheels forward,    SPX5,SPX3=1
+"j" (Right Stick) (Down) on Axis 5 Right wheels backward  SPX5,SPX3=-1
+
+"l" (Left Stick) (Up) on Axis 5 Left wheels forward      SPX4,SPX51=-1
+"k" (Left Stick) (Down) on Axis 5 Left wheels backward   SPX4,SPX51=1
+
+"o" (Right Bumper)Toggle Smooth Drive
+
+Con2: (1)
+"r" (right trigger) Hold down to shoot                   SPX2,SPX10,SPX20=1 at set timing
+"z" Button1: Arm(Climber) Up                             SPX6,SPX7 at given multiplier to -1
+"x" Button2: Arm(Climber) Down                           SPX6,SPX7 at given multiplier to 1
+"c" Button3: Intake In(feed)                             SPX60=1
+"v" Button4: Intake Out(eject)                           SPX60=-1
+"b" Button5: Loader In(feed)                             SPX20=1
+
+POV (D-PAD) up    Intake up (225, 180, 135)              SPX57=-1
+POV (D-PAD)down  Intake down (315, 0, 45)                SPX57=1
+
+ 
