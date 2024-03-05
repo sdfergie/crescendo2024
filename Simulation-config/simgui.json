@@ -1,0 +1,79 @@
+{
+  "HALProvider": {
+    "Other Devices": {
+      "Victor SPX[10]": {
+        "header": {
+          "open": true
+        }
+      },
+      "Victor SPX[20]": {
+        "header": {
+          "open": true
+        }
+      },
+      "Victor SPX[2]": {
+        "header": {
+          "open": true
+        }
+      },
+      "Victor SPX[3]": {
+        "header": {
+          "open": true
+        }
+      },
+      "Victor SPX[4]": {
+        "header": {
+          "open": true
+        }
+      },
+      "Victor SPX[51]": {
+        "header": {
+          "open": true
+        }
+      },
+      "Victor SPX[57]": {
+        "header": {
+          "open": true
+        }
+      },
+      "Victor SPX[5]": {
+        "header": {
+          "open": true
+        }
+      },
+      "Victor SPX[60]": {
+        "header": {
+          "open": true
+        }
+      },
+      "Victor SPX[6]": {
+        "header": {
+          "open": true
+        }
+      },
+      "Victor SPX[7]": {
+        "header": {
+          "open": true
+        }
+      },
+      "Victor SPX[8]": {
+        "header": {
+          "open": true
+        }
+      },
+      "Victor SPX[9]": {
+        "header": {
+          "open": true
+        }
+      }
+    }
+  },
+  "NTProvider": {
+    "types": {
+      "/FMSInfo": "FMSInfo"
+    }
+  },
+  "NetworkTables View": {
+    "visible": false
+  }
+}
